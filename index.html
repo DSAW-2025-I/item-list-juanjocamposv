@@ -12,63 +12,344 @@
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
+    @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;600;700&display=swap');
+
+body {
+  font-family: 'Red Hat Text', sans-serif;
+  background-color: hsl(20, 50%, 98%);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  background-color: white;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: hsl(14, 65%, 9%);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+  gap: 20px;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  flex: 3;
+}
+
+.dessert-item {
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dessert-item img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.dessert-info {
+  flex-grow: 1;
+  padding: 10px 0;
+  width: 100%;
+}
+
+.dessert-info h2 {
+  font-size: 14px;
+  color: hsl(14, 65%, 9%);
+  margin: 10px 0;
+  text-align: left;
+}
+
+.dessert-info p {
+  font-size: 14px;
+  color: hsl(14, 86%, 42%);
+  font-weight: 600;
+  text-align: left;
+}
+
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+button {
+  background: white;
+  color: hsl(14, 86%, 42%);
+  border: 2px solid hsl(14, 86%, 42%);
+  padding: 10px;
+  width: 90%;
+  cursor: pointer;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+  background: hsl(14, 86%, 42%);
+  color: white;
+}
+
+.cart {
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.cart h2 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.checkout {
+  width: 100%;
+  background: hsl(159, 69%, 38%);
+  margin-top: 10px;
+}
+
+.checkout:hover {
+  background: hsl(14, 65%, 9%);
+}
+
+p, h2{
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .parent {
+    grid-template-columns: 1fr;
+  }
+
+  .cart {
+    width: 100%;
+  }
+}
+
+
   </style>
 </head>
 <body>
 
-  Desserts
-
-  Waffle with Berries
-  Waffle
-  6.50
-  Add to Cart
-
-  Vanilla Bean Crème Brûlée
-  Crème Brûlée
-  7.00
-  Add to Cart
-
-  Macaron Mix of Five
-  Macaron
-  8.00
-  Add to Cart
-
-  Classic Tiramisu
-  Tiramisu
-  5.50
-  Add to Cart
-
-  Pistachio Baklava
-  Baklava
-  4.00
-  Add to Cart
-
-  Lemon Meringue Pie
-  Pie
-  5.00
-  Add to Cart
-
-  Red Velvet Cake
-  Cake
-  4.50
-  Add to Cart
-
-  Salted Caramel Brownie
-  Brownie
-  4.50
-  Add to Cart
-
-  Vanilla Panna Cotta
-  Panna Cotta
-  6.50
-  Add to Cart
-
-  Your Cart (<!-- Quantity -->)
-  Your added items will appear here
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+  <header> <h1 class="title">Desserts</h1> </header>
+  <div class="container">
+    <main class="parent">
+      <article class="dessert-item">
+        <img src="assets/image-waffle-desktop.jpg" alt="Waffle with Berries">
+        <button class="add-to-cart">Add to Cart</button>
+        <p>Waffle</p>
+        <h2>Waffle with Berries</h2>
+        <p>$6.50</p>
+      </article>
+      <article class="dessert-item">
+        <img src="assets/image-creme-brulee-desktop.jpg" alt="Vanilla Bean Crème Brûlée">
+        <button class="add-to-cart">Add to Cart</button>
+        <p>Crème Brûlée</p>
+        <h2>Vanilla Bean Crème Brûlée</h2>
+        <p>$7.00</p>
+      </article>
+      <article class="dessert-item">
+        <img src="assets/image-macaron-desktop.jpg" alt="Macaron Mix of Five">
+        <button>Add to Cart</button>
+        <p>Macaron</p>
+        <h2>Macaron Mix of Five</h2>
+        <p>$8.00</p>
+        
+      </article>
+      <article class="dessert-item div4">
+        <img src="assets/image-tiramisu-desktop.jpg" alt="Classic Tiramisu">
+        <button class="add-to-cart">Add to Cart</button>
+        <p>Tiramisu</p>
+        <h2>Classic Tiramisu</h2>
+        <p>$5.50</p>
+        
+      </article>
+      <article class="dessert-item div5">
+        <img src="assets/image-baklava-desktop.jpg" alt="Pistachio Baklava">
+        <button class="add-to-cart">Add to Cart</button>
+        <p>Baklava</p>
+        <h2>Pistachio Baklava</h2>
+        <p>$4.00</p>
+        
+      </article>
+      <article class="dessert-item div6">
+        <img src="assets/image-meringue-desktop.jpg" alt="Lemon Meringue Pie">
+        <button class="add-to-cart">Add to Cart</button>
+        <p>Pie</p>
+        <h2>Lemon Meringue Pie</h2>
+        <p>$5.00</p>
+        
+      </article>
+      <article class="dessert-item div7">
+        <img src="assets/image-cake-desktop.jpg" alt="Red Velvet Cake">
+        <button class="add-to-cart">Add to Cart</button>
+        <p>Cake</p>
+        <h2>Red Velvet Cake</h2>
+        <p>$4.50</p>
+        
+      </article>
+      <article class="dessert-item div8">
+        <img src="assets/image-brownie-desktop.jpg" alt="Salted Caramel Brownie">
+        <button class="add-to-cart">Add to Cart</button>
+        <p>Brownie</p>
+        <h2>Salted Caramel Brownie</h2>
+        <p>$4.50</p>
+        
+      </article>
+      <article class="dessert-item div9">
+        <img src="assets/image-panna-cotta-desktop.jpg" alt="Vanilla Panna Cotta">
+        <button class="add-to-cart">Add to Cart</button>
+        <p>Panna Cotta</p>
+        <h2>Vanilla Panna Cotta</h2>
+        <p>$6.50</p>
+        
+      </article>
+    </main>
+    
+    <aside class="cart">
+      <h2>Your Cart (0)</h2>
+      <p>Your added items will appear here</p>
+      <button>Confirm Order</button>
+    </aside>
+    <div class="modal">
+      <div class="modal-content">
+         <p>Order Confirmed!</p>
+         <button class="modal-close">Close</button>
+      </div>
+   </div>
+   
   </div>
 </body>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const cart = [];
+    const cartContainer = document.querySelector(".cart-items");
+    const cartTitle = document.querySelector(".cart h2");
+    const confirmOrderButton = document.querySelector(".checkout");
+    const newOrderButton = document.querySelector(".new-order");
+    const modal = document.querySelector(".modal");
+    const modalClose = document.querySelector(".modal-close");
+    document.querySelectorAll(".add-to-cart").forEach((button) => {
+        button.addEventListener("click", (event) => {
+            const dessertItem = event.target.closest(".dessert-item");
+            const dessertName = dessertItem.querySelector("h2").textContent;
+            const dessertPrice = parseFloat(dessertItem.querySelector("p:last-of-type").textContent.replace("$", ""));
+
+            addToCart(dessertName, dessertPrice);
+        });
+    });
+
+    function addToCart(name, price) {
+        const existingItem = cart.find(item => item.name === name);
+        
+        if (existingItem) {
+            existingItem.quantity++;
+        } else {
+            cart.push({ name, price, quantity: 1 });
+        }
+        
+        updateCart();
+    }
+
+    function removeFromCart(name) {
+        const itemIndex = cart.findIndex(item => item.name === name);
+        if (itemIndex !== -1) {
+            if (cart[itemIndex].quantity > 1) {
+                cart[itemIndex].quantity--;
+            } else {
+                cart.splice(itemIndex, 1);
+            }
+        }
+        updateCart();
+    }
+
+    function updateCart() {
+        cartContainer.innerHTML = "";
+
+        if (cart.length === 0) {
+            cartContainer.innerHTML = "<p>Your added items will appear here</p>";
+        } else {
+            cart.forEach(item => {
+                const cartItem = document.createElement("div");
+                cartItem.classList.add("cart-item");
+
+                cartItem.innerHTML = `
+                    <span>${item.name} - $${item.price.toFixed(2)} x ${item.quantity}</span>
+                    <div class="cart-controls">
+                        <button class="decrease" data-name="${item.name}">-</button>
+                        <button class="increase" data-name="${item.name}">+</button>
+                    </div>
+                `;
+                cartContainer.appendChild(cartItem);
+            });
+        }
+
+        cartTitle.textContent = `Your Cart (${cart.reduce((acc, item) => acc + item.quantity, 0)})`;
+
+        document.querySelectorAll(".increase").forEach(button => {
+            button.addEventListener("click", (event) => {
+                const name = event.target.getAttribute("data-name");
+                addToCart(name, cart.find(item => item.name === name).price);
+            });
+        });
+
+        document.querySelectorAll(".decrease").forEach(button => {
+            button.addEventListener("click", (event) => {
+                const name = event.target.getAttribute("data-name");
+                removeFromCart(name);
+            });
+        });
+    }
+
+    confirmOrderButton.addEventListener("click", () => {
+        modal.classList.add("show");
+    });
+
+    modalClose.addEventListener("click", () => {
+        modal.classList.remove("show");
+    });
+
+    newOrderButton.addEventListener("click", () => {
+        cart.length = 0;
+        updateCart();
+        modal.classList.remove("show");
+    });
+
+});
+
+
+</script>
 </html>
